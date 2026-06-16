@@ -138,7 +138,7 @@
       }
     }
   ],
-  "pei": {
+  "pe": {
     "meetingTimes": [
       {
         "day": "Sunday",
@@ -151,6 +151,28 @@
         "time": "7:00 PM",
         "meta": "Bible Study",
         "description": "Bible Study"
+      }
+    ],
+    "social": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/lighthouse_pei/",
+        "iconClass": "fa fab fa-instagram"
+      },
+      {
+        "name": "facebook",
+        "link": "https://www.facebook.com/lighthousePEI",
+        "iconClass": "fa fab fa-facebook"
+      },
+      {
+        "name": "youtube",
+        "link": "https://www.youtube.com/@lighthousepei",
+        "iconClass": "fa fab fa-youtube"
+      },
+      {
+        "name": "mail",
+        "link": "mailto:mylighthouseministries@gmail.com",
+        "iconClass": "fa fab fa-mailchimp"
       }
     ]
   },
@@ -168,6 +190,7 @@
         "meta": "Bible Study",
         "description": "Bible Study"
       }
-    ]
+    ],
+    "social": []
   }
 }

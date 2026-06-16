@@ -14,10 +14,10 @@ export default function Home() {
               <Link className="btn" to="/plan-a-visit">Plan Your Visit <span className="arrow">→</span></Link>
               <Link className="btn btn-ghost" to="/watch"><span className="btn-play"><span className="ic">▶</span></span> Watch Online</Link>
             </div>
-            <div className="hero-meta">
+            {/* <div className="hero-meta">
               <div className="m"><span className="k">Gather</span><span className="v">Sundays · 10:00 AM</span></div>
               <div className="m"><span className="k">Locations</span><span className="v">PEI · BC · NS soon</span></div>
-            </div>
+            </div> */}
           </div>
           <div className="hero-media">
             <div className="ph"><span className="cap">photo · congregation in worship</span></div>

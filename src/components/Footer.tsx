@@ -1,6 +1,29 @@
 import { Link } from 'react-router-dom'
+import { useCampus } from '../context/CampusProvider'
+import Data from '../../data.json';
+import { useEffect, useState } from 'react';
+import { MeetingTime } from '../types';
+
+interface SocialLink {
+  name: string;
+  link: string;
+  iconClass: string;
+}
 
 export default function Footer() {
+  const [links, setLinks] = useState<SocialLink[]>([]);
+  const [meet, setMeet] = useState<MeetingTime>(undefined);
+  const { campus } = useCampus();
+
+  useEffect(() => {
+    const c = Data[campus]?.social;
+    const time = Data[campus]?.meetingTimes?.find(meet => meet.day == "Sunday") as MeetingTime;
+    if (c) {
+      setLinks(c);
+      setMeet(time);
+    }
+  }, [campus])
+
   return (
     <footer className="footer" id="contact">
       <div className="wrap">
@@ -8,11 +31,15 @@ export default function Footer() {
           <div className="f-brand">
             <img src="/assets/logo.png" alt="Lighthouse Gospel Ministry" />
             <p>Raising a spirit-filled generation and kingdom influencers across Canada.</p>
-            <div className="social">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="Instagram">◎</a>
-              <a href="#" aria-label="YouTube">▶</a>
-            </div>
+            {links?.length &&
+              <div className="social">
+                {links.map((link, i) => (
+                  <a key={`${i}_${link.name}`} href={link.name} aria-label="Facebook">
+                    <i className={link.iconClass}></i>
+                  </a>
+                ))}
+              </div>
+            }
           </div>
           <div>
             <h4>Visit</h4>
@@ -36,8 +63,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="f-bottom">
-          <span>© 2026 Lighthouse Gospel Ministry. All rights reserved.</span>
-          <span>Sundays · 10:00 AM · In person &amp; online</span>
+          <span>© 2021 Lighthouse Gospel Ministry. All rights reserved.</span>
+          <span>{meet?.day}s · {meet?.time} · In person &amp; online</span>
         </div>
       </div>
     </footer>

@@ -2,23 +2,30 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Data from '../../data.json';
 import { MeetingTime } from '../types';
+import { useCampus } from '../context/CampusProvider';
 
 const CAMPUSES = [
-  { id: 'pei', label: 'Prince Edward Island' },
+  { id: 'pe', label: 'Prince Edward Island' },
   { id: 'bc', label: 'British Columbia' },
 ]
 
 export default function CampusBar() {
-  const [active, setActive] = useState('pei')
+  const { campus, setCampus } = useCampus();
+  const [active, setActive] = useState('pe')
   const [meetingTime, setMeetTime] = useState<MeetingTime | undefined>(undefined)
 
   useEffect(() => {
     if (Data[active]) {
-      const time = Data[active]?.meetingTimes?.find((meet: MeetingTime) => meet.day == "Sunday" );
+      setActive(campus)
+      const time = Data[active]?.meetingTimes?.find((meet: MeetingTime) => meet.day == "Sunday");
       setMeetTime(time)
     }
-  }, [active])
+  }, [active, campus])
 
+  const handleCampusChange = (campus: string) => {
+    setActive(campus)
+    setCampus(campus as 'pe' | 'bc')
+  }
   return (
     <div className="campusbar">
       <div className="wrap">
@@ -28,7 +35,7 @@ export default function CampusBar() {
             <span
               key={c.id}
               className={'chip' + (active === c.id ? ' active' : '')}
-              onClick={() => setActive(c.id)}
+              onClick={() => handleCampusChange(c.id)}
             >
               {c.label}
             </span>
@@ -36,7 +43,9 @@ export default function CampusBar() {
           <span className="chip soon"><span className="dot"></span>Nova Scotia · Coming soon</span>
         </div>
         <div className="cb-right">
+          {meetingTime &&
           <span className="cb-time">{meetingTime?.day}s <b>{meetingTime?.time}</b></span>
+          }
           <Link className="live" to="/watch"><span className="pulse"></span>Watch Live</Link>
         </div>
       </div>
