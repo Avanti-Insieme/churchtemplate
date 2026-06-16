@@ -17,7 +17,7 @@ export default function Events() {
         <div className="wrap">
           <div className="crumb"><Link to="/">Home</Link><span className="sep">/</span><span>Events</span></div>
           <span className="eyebrow">{data?.pageHero.eyebrow ?? "What's happening"}</span>
-          <h1>Upcoming <em>events</em></h1>
+          <h1 dangerouslySetInnerHTML={{ __html: data.pageHero.h1 }}></h1>
           <p className="lead">
           {
             data.pageHero.leadParagraph ??
@@ -40,7 +40,7 @@ export default function Events() {
                   </div>
                 </div>
                 <a className="btn btn-ghost btn-sm ev-cta" href="#">Details</a>
-                <div className="more-detail">{e.description}</div>
+                {/* <div className="more-detail">{e.description}</div> */}
               </div>
                 </>
             ))}

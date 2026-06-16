@@ -5,7 +5,7 @@ import Visit from './pages/Visit'
 import Watch from './pages/Watch.jsx'
 import Locations from './pages/Locations.js'
 import About from './pages/About.js'
-import Events from './pages/Events.jsx'
+import Events from './pages/Events'
 import Give from './pages/Give.jsx'
 
 export default function App() {

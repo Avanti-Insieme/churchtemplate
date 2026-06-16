@@ -105,7 +105,7 @@
   "events": {
     "pageHero": {
       "eyebrow": "What are we doing next?!",
-      "h1": "Upcoming Events",
+      "h1": "Upcoming <em>events</em>",
       "leadParagraph": "Worship nights, first-timer lunches and gatherings for every season of life. There's always a next step at Lighthouse."
     },
     "items": [
@@ -137,5 +137,37 @@
         ]
       }
     }
-  ]
+  ],
+  "pei": {
+    "meetingTimes": [
+      {
+        "day": "Sunday",
+        "time": "6:00 PM",
+        "meta": "Worship Service",
+        "description": "Worship Service"
+      },
+      {
+        "day": "Tuesday",
+        "time": "7:00 PM",
+        "meta": "Bible Study",
+        "description": "Bible Study"
+      }
+    ]
+  },
+  "bc": {
+    "meetingTimes": [
+      {
+        "day": "Sunday",
+        "time": "10:00 AM",
+        "meta": "Worship Service",
+        "description": "Worship Service"
+      },
+      {
+        "day": "Tuesday",
+        "time": "7:00 PM",
+        "meta": "Bible Study",
+        "description": "Bible Study"
+      }
+    ]
+  }
 }
