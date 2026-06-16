@@ -16,6 +16,7 @@ interface OnlineMessage {
   title: string;
   leadParagraph: string;
   meetingTimes: MeetingTime[];
+  link: { target: string|null, href: string };
 }
 
 export default function Locations() {
@@ -29,7 +30,7 @@ export default function Locations() {
         <div className="wrap">
           <div className="crumb"><Link to="/">Home</Link><span className="sep">/</span><span>Locations</span></div>
           <span className="eyebrow">{hero.eyebrow}</span>
-          <h1>{hero.h1}</h1>
+          <h1 dangerouslySetInnerHTML={{ __html: hero.h1 }}></h1>
           <p className="lead">{hero.leadParagraph}</p>
         </div>
       </section>
@@ -40,15 +41,23 @@ export default function Locations() {
             {data.map(location => (
               <>
               <div className="loc-card">
-                <div className="ph map"><span className="cap">map · Prince Edward Island</span></div>
+                <div className="ph map">
+                  <span className="cap">map · Prince Edward Island</span>
+                </div>
                 <div className="body">
                   <span className="region">{location.region}</span>
                   <h3>Charlottetown Campus</h3>
-                  <p className="addr">{location.address.number} {location.address.street}, {location.address.city}, {location.address.province}</p>
+                  <p className="addr">
+                    {location.address.number} {location.address.street}, {location.address.city}, {location.address.province}
+                  </p>
                   {location.meetingTimes.map(time => (
                     <p className="svc">🕙 {time.day} · <b>{time.time}</b></p>
                   ))}
-                  <div className="foot"><a className="btn btn-ghost btn-sm" href={location.cta.href}>{location.cta.label} <span className="arrow">→</span></a></div>
+                  <div className="foot">
+                    <a className="btn btn-ghost btn-sm" href={location.cta.href} target="_blank">
+                      {location.cta.label} <span className="arrow">→</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </>
@@ -60,7 +69,7 @@ export default function Locations() {
               <div>
                 <h2 className="title">{onlineMsg.title}</h2>
                 <p className="lead">{onlineMsg.leadParagraph}</p>
-                <Link className="btn btn-light" to="/watch" style={{ marginTop: '6px' }}>Watch Online <span className="arrow">→</span></Link>
+                <Link className="btn btn-light" target={onlineMsg.link.target} to={onlineMsg.link.href} style={{ marginTop: '6px' }}>Watch Online <span className="arrow">→</span></Link>
               </div>
               <div className="times">
                 {onlineMsg.meetingTimes.map(time => (

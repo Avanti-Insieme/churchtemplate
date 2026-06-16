@@ -12,7 +12,7 @@ export default function About() {
         <div className="wrap">
           <div className="crumb"><Link to="/">Home</Link><span className="sep">/</span><span>About</span></div>
           <span className="eyebrow">{data.pageHero.eyebrow}</span>
-          <h1>{data.pageHero.h1}</h1>
+          <h1 dangerouslySetInnerHTML={{ __html: data.pageHero.h1 }}></h1>
           <p className="lead">{data.pageHero.leadParagraph}</p>
         </div>
       </section>

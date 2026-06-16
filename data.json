@@ -2,7 +2,13 @@
   "header": {},
   "footer": {},
   "home": {},
-  "planVisit": {},
+  "visit": {
+    "pageHero": {
+      "eyebrow": "New here?",
+      "h1": "What to expect on your <em>first visit</em>",
+      "leadParagraph": "We're growing across Canada. Choose a location for directions and service details."
+    }
+  },
   "watch": {},
   "locations": {
     "pageHero": {
@@ -24,32 +30,35 @@
         "meetingTimes": [
           {
             "day": "Sunday",
-            "time": "10:00 AM"
+            "time": "6:00 PM",
+            "meta": "Worship service",
+            "description": "Worship service"
           }
         ],
         "cta": {
-          "label": "Get Directions", "href": "#"
+          "label": "Get Directions",
+          "href": "https://maps.app.goo.gl/m7jhwxMn4hegjrpL8",
+          "primary": true
         }
       }
     ],
     "onlineMessage": {
       "title": "Can't make it in person?",
       "leadParagraph": "Wherever you are, you can still gather with us. Stream the Sunday service live or watch on demand.",
+      "link": {
+        "href": "https://www.youtube.com/@lighthousepei",
+        "target": "_blank"
+      },
       "meetingTimes": [
         {
           "day": "Sunday",
-          "time": "10:00 AM",
+          "time": "6:00 PM",
           "meta": "Worship Service"
         },
         {
           "day": "Tuesday",
           "time": "7:00 PM",
           "meta": "Bible Study"
-        },
-        {
-          "day": "Sunday",
-          "time": "10:00 AM",
-          "meta": "Worship Service"
         }
       ]
     }
@@ -108,5 +117,25 @@
         "meta": ["7: 00 PM", "PEI Campus"]
       }
     ]
-  }
+  },
+  "meetingTimes": [
+    {
+      "pei": {
+        "meetingTimes": [
+          {
+            "day": "Sunday",
+            "time": "6:00 PM",
+            "meta": "Worship Service",
+            "description": "Worship Service"
+          },
+          {
+            "day": "Tuesday",
+            "time": "7:00 PM",
+            "meta": "Bible Study",
+            "description": "Bible Study"
+          }
+        ]
+      }
+    }
+  ]
 }

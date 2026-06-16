@@ -1,14 +1,34 @@
 import { Link } from 'react-router-dom'
+import { MeetingTime } from '../types'
+import Data from '../../data.json';
+import { useEffect, useState } from 'react';
 
 export default function Visit() {
+  const [meetingTimes, setMeetingTimes] = useState<MeetingTime[] | undefined>(undefined)
+  const data = Data.visit;
+  const times = Data.meetingTimes as any[];
+
+  useEffect(() => {
+    const v = times
+      .map(data => data)
+      .filter((meetData: { [key: string]: any }[]) => {
+        const key = Object.keys(meetData)[0];
+        return key == "pei";
+      })[0] as { [key: string]: any };
+
+    if (v) {
+      setMeetingTimes(v.pei.meetingTimes);
+    }
+  }, [times])
+
   return (
     <main data-screen-label="Plan a Visit">
       <section className="pagehero">
         <div className="wrap">
           <div className="crumb"><Link to="/">Home</Link><span className="sep">/</span><span>Plan a Visit</span></div>
-          <span className="eyebrow">New here?</span>
-          <h1>What to expect on your <em>first visit</em></h1>
-          <p className="lead">No pressure, no dress code, no awkwardness. Just walk in — here's how a Sunday flows and everything you'll need to know.</p>
+          <span className="eyebrow">{data.pageHero.eyebrow}</span>
+          <h1 dangerouslySetInnerHTML={{ __html: data.pageHero.h1 }}></h1>
+          <p className="lead">{data.pageHero.leadParagraph}</p>
           <div className="ph-actions">
             <Link className="btn" to="/locations">Find your campus <span className="arrow">→</span></Link>
             <Link className="btn btn-ghost" to="/watch"><span className="btn-play"><span className="ic">▶</span></span> Watch a service first</Link>
@@ -50,9 +70,13 @@ export default function Visit() {
               <Link className="btn btn-light" to="/watch" style={{ marginTop: '6px' }}>Watch Online <span className="arrow">→</span></Link>
             </div>
             <div className="times">
-              <div className="time-row"><span className="day">Sunday</span><span className="meta">Worship Service</span><span className="tm">10:00 AM</span></div>
-              <div className="time-row"><span className="day">Wednesday</span><span className="meta">Midweek Bible Study</span><span className="tm">7:00 PM</span></div>
-              <div className="time-row"><span className="day">Friday</span><span className="meta">Prayer &amp; Encounter</span><span className="tm">7:30 PM</span></div>
+              {meetingTimes?.length && meetingTimes.map((meet: MeetingTime, i: number) => (
+                <div key={`${i}_${meet.day}`} className="time-row">
+                  <span className="day">{meet.day}</span>
+                  <span className="meta">{meet.meta}</span>
+                  <span className="tm">{meet.time}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
