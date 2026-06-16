@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom'
+import Data from '../../data.json';
 
 export default function Home() {
+  const data = Data.home;
+
   return (
     <main data-screen-label="Home">
       {/* HERO */}
       <section className="hero" id="top">
         <div className="wrap">
           <div className="hero-copy">
-            <span className="eyebrow">Welcome home</span>
-            <h1 className="display">A people driven by purpose — raising a <em>spirit‑filled</em> generation.</h1>
-            <p className="lead">Wherever you are on your journey, there's a place for you at Lighthouse. Come as you are — in person or online.</p>
+            <span className="eyebrow">{data.pageHero.eyebrow}</span>
+            <h1 dangerouslySetInnerHTML={{ __html: data.pageHero.h1 }} className="display"></h1>
+            <p className="lead">{data.pageHero.leadParagraph}</p>
             <div className="hero-actions">
               <Link className="btn" to="/plan-a-visit">Plan Your Visit <span className="arrow">→</span></Link>
               <Link className="btn btn-ghost" to="/watch"><span className="btn-play"><span className="ic">▶</span></span> Watch Online</Link>
@@ -20,7 +23,15 @@ export default function Home() {
             </div> */}
           </div>
           <div className="hero-media">
-            <div className="ph"><span className="cap">photo · congregation in worship</span></div>
+            <div
+              className="ph"
+              style={{
+                backgroundImage: `url('${data.heroImg}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center"
+              }}>
+                  <span className="cap">photo · congregation in worship</span>
+            </div>
             <div className="float">
               <span className="ico">🕯️</span>
               <span className="t"><b>New here?</b><br />We'll save you a seat and walk you in.</span>
@@ -40,50 +51,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hub">
-            <Link className="hub-card" to="/plan-a-visit">
-              <span className="hc-ico">🕯️</span>
-              <span className="hc-k">New here?</span>
-              <h3>Plan a Visit</h3>
-              <p>Know exactly what to expect before you walk through the doors on Sunday.</p>
-              <span className="hc-go">What to expect <span className="arrow">→</span></span>
-            </Link>
-            <Link className="hub-card" to="/watch">
-              <span className="hc-ico">▶</span>
-              <span className="hc-k">Anytime, anywhere</span>
-              <h3>Watch Online</h3>
-              <p>Stream Sunday live or catch up on recent messages from the current series.</p>
-              <span className="hc-go">Watch now <span className="arrow">→</span></span>
-            </Link>
-            <Link className="hub-card" to="/locations">
-              <span className="hc-ico">📍</span>
-              <span className="hc-k">One church, many shores</span>
-              <h3>Locations</h3>
-              <p>Find a campus near you across PEI and BC — with Nova Scotia coming soon.</p>
-              <span className="hc-go">Find a campus <span className="arrow">→</span></span>
-            </Link>
-            <Link className="hub-card" to="/about">
-              <span className="hc-ico">✦</span>
-              <span className="hc-k">Who we are</span>
-              <h3>About Us</h3>
-              <p>Our mission to raise kingdom influencers and what we believe as a family.</p>
-              <span className="hc-go">Read our story <span className="arrow">→</span></span>
-            </Link>
-            <Link className="hub-card" to="/events">
-              <span className="hc-ico">📅</span>
-              <span className="hc-k">What's happening</span>
-              <h3>Events</h3>
-              <p>Worship nights, first-timer lunches and gatherings for every season of life.</p>
-              <span className="hc-go">See the calendar <span className="arrow">→</span></span>
-            </Link>
-            <Link className="hub-card" to="/give">
-              <span className="hc-ico">♥</span>
-              <span className="hc-k">Partner with the mission</span>
-              <h3>Give</h3>
-              <p>Your generosity helps us reach more people across Canada — and beyond.</p>
-              <span className="hc-go">Ways to give <span className="arrow">→</span></span>
-            </Link>
-          </div>
+          {data?.infoCards.length &&
+            <div className="hub">
+              {data.infoCards.map(card => (
+                <Link className="hub-card" to={card.link}>
+                  <span className="hc-ico"><i className={card.icon}></i></span>
+                  <span className="hc-k">{card.cardBrow}</span>
+                  <h3>{card.cardTitle}</h3>
+                  <p>{card.cardText}</p>
+                  <span className="hc-go">{card.cardCtaText} <span className="arrow">→</span></span>
+                </Link>
+              ))}
+            </div>
+          }
         </div>
       </section>
 

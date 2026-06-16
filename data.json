@@ -1,7 +1,64 @@
 {
   "header": {},
   "footer": {},
-  "home": {},
+  "home": {
+    "heroImg": "/public/images/lighthouse_img.jpg",
+    "pageHero": {
+      "eyebrow": "Welcome home",
+      "h1": "A people driven by purpose — raising a <em>spirit‑filled</em> generation.",
+      "leadParagraph": "Wherever you are on your journey, there's a place for you at Lighthouse. Come as you are — in person or online."
+    },
+    "infoCards": [
+      {
+        "icon": "fa fa-cake-candles",
+        "link": "/plan-a-visit",
+        "cardBrow": "New here?",
+        "cardTitle": "Plan a Visit",
+        "cardText": "Know exactly what to expect before you walk through the doors on Sunday.",
+        "cardCtaText": "What to expect"
+      },
+      {
+        "icon": "fa fa-play",
+        "link": "/watch",
+        "cardBrow": "Anytime, anywhere",
+        "cardTitle": "Watch Online",
+        "cardText": "Stream Sunday live or catch up on recent messages from the current series.",
+        "cardCtaText": "Watch now"
+      },
+      {
+        "icon": "fa fa-location-pin",
+        "link": "/locations",
+        "cardBrow": "One church, many shores",
+        "cardTitle": "Locations",
+        "cardText": "Find a campus near you across PEI and BC — with Nova Scotia coming soon.",
+        "cardCtaText": "Find a campus"
+      },
+      {
+        "icon": "fa fa-star",
+        "link": "/about",
+        "cardBrow": "Who we are",
+        "cardTitle": "About Us",
+        "cardText": "Our mission to raise kingdom influencers and what we believe as a family.",
+        "cardCtaText": "Read our story"
+      },
+      {
+        "icon": "fa fa-calendar",
+        "link": "/events",
+        "cardBrow": "What's happening",
+        "cardTitle": "Events",
+        "cardText": "Worship nights, first-timer lunches and gatherings for every season of life.",
+        "cardCtaText": "See the calendar"
+      },
+      {
+        "icon": "fa fa-heart",
+        "link": "/give",
+        "cardBrow": "Partner with the mission",
+        "cardTitle": "Give",
+        "cardText": "Your generosity helps us reach more people across Canada — and beyond.",
+        "cardCtaText": "Ways to give"
+      }
+    ]
+  },
   "visit": {
     "pageHero": {
       "eyebrow": "New here?",
@@ -64,6 +121,7 @@
     }
   },
   "about": {
+    "heroImg": "/images/welcome_img.jpg",
     "pageHero": {
       "eyebrow": "Who we are",
       "h1": "A purpose-driven people, raising <em>kingdom influencers</em>",

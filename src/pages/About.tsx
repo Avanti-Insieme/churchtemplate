@@ -19,7 +19,15 @@ export default function About() {
 
       <section className="section about">
         <div className="wrap about-grid">
-          <div className="ph"><span className="cap">photo · community &amp; ministry life</span></div>
+          <div
+            className="ph"
+            style={{
+              backgroundImage: `url('${data.heroImg}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
+          >
+              <span className="cap">photo · community &amp; ministry life</span></div>
           <div>
             <span className="eyebrow">{body[0].eyebrow}</span>
             <h2 className="title">{body[0].title}</h2>
