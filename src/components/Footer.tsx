@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useCampus } from '../context/CampusProvider'
-import Data from '../../data.json';
+import { useSiteData } from '../context/SiteDataProvider'
 import { useEffect, useState } from 'react';
 import { MeetingTime } from '../types';
 
@@ -11,18 +11,20 @@ interface SocialLink {
 }
 
 export default function Footer() {
+  const siteData = useSiteData()
   const [links, setLinks] = useState<SocialLink[]>([]);
   const [meet, setMeet] = useState<MeetingTime>(undefined);
   const { campus } = useCampus();
 
   useEffect(() => {
-    const c = Data[campus]?.social;
-    const time = Data[campus]?.meetingTimes?.find(meet => meet.day == "Sunday") as MeetingTime;
+    const campusData = siteData[campus as keyof typeof siteData] as any;
+    const c = campusData?.social;
+    const time = campusData?.meetingTimes?.find((m: MeetingTime) => m.day === "Sunday") as MeetingTime;
     if (c) {
       setLinks(c);
       setMeet(time);
     }
-  }, [campus])
+  }, [campus, siteData])
 
   return (
     <footer className="footer" id="contact">

@@ -1,0 +1,264 @@
+{
+  "home": {
+    "heroImg": "/public/images/lighthouse_img.jpg",
+    "pageHero": {
+      "eyebrow": "Welcome home",
+      "h1": "A people driven by purpose — raising a <em>spirit‑filled</em> generation.",
+      "leadParagraph": "Wherever you are on your journey, there's a place for you at Lighthouse. Come as you are — in person or online."
+    },
+    "infoCards": [
+      {
+        "icon": "fa fa-cake-candles",
+        "link": "/plan-a-visit",
+        "cardBrow": "New here?",
+        "cardTitle": "Plan a Visit",
+        "cardText": "Know exactly what to expect before you walk through the doors on Sunday.",
+        "cardCtaText": "What to expect"
+      },
+      {
+        "icon": "fa fa-play",
+        "link": "/watch",
+        "cardBrow": "Anytime, anywhere",
+        "cardTitle": "Watch Online",
+        "cardText": "Stream Sunday live or catch up on recent messages from the current series.",
+        "cardCtaText": "Watch now"
+      },
+      {
+        "icon": "fa fa-location-pin",
+        "link": "/locations",
+        "cardBrow": "One church, many shores",
+        "cardTitle": "Locations",
+        "cardText": "Find a campus near you across PEI and BC — with Nova Scotia coming soon.",
+        "cardCtaText": "Find a campus"
+      },
+      {
+        "icon": "fa fa-star",
+        "link": "/about",
+        "cardBrow": "Who we are",
+        "cardTitle": "About Us",
+        "cardText": "Our mission to raise kingdom influencers and what we believe as a family.",
+        "cardCtaText": "Read our story"
+      },
+      {
+        "icon": "fa fa-calendar",
+        "link": "/events",
+        "cardBrow": "What's happening",
+        "cardTitle": "Events",
+        "cardText": "Worship nights, first-timer lunches and gatherings for every season of life.",
+        "cardCtaText": "See the calendar"
+      },
+      {
+        "icon": "fa fa-heart",
+        "link": "/give",
+        "cardBrow": "Partner with the mission",
+        "cardTitle": "Give",
+        "cardText": "Your generosity helps us reach more people across Canada — and beyond.",
+        "cardCtaText": "Ways to give"
+      }
+    ]
+  },
+  "visit": {
+    "pageHero": {
+      "eyebrow": "New here?",
+      "h1": "What to expect on your <em>first visit</em>",
+      "leadParagraph": "We're growing across Canada. Choose a location for directions and service details."
+    }
+  },
+  "locations": {
+    "pageHero": {
+      "eyebrow": "One church, many shores",
+      "h1": "Find a <em>campus</em> near you",
+      "leadParagraph": "We're growing across Canada. Choose a location for directions and service details."
+    },
+    "locations": [
+      {
+        "image": "",
+        "region": "Prince Edward Island",
+        "name": "Charlottetown Campus",
+        "address": {
+          "number": "220",
+          "street": "Richmond Street",
+          "city": "Charlottetown",
+          "province": "PE"
+        },
+        "meetingTimes": [
+          {
+            "day": "Sunday",
+            "time": "6:00 PM",
+            "meta": "Worship service",
+            "description": "Worship service"
+          }
+        ],
+        "cta": {
+          "label": "Get Directions",
+          "href": "https://maps.app.goo.gl/m7jhwxMn4hegjrpL8",
+          "primary": true
+        }
+      }
+    ],
+    "onlineMessage": {
+      "title": "Can't make it in person?",
+      "leadParagraph": "Wherever you are, you can still gather with us. Stream the Sunday service live or watch on demand.",
+      "link": {
+        "href": "https://www.youtube.com/@lighthousepei",
+        "target": "_blank"
+      },
+      "meetingTimes": [
+        {
+          "day": "Sunday",
+          "time": "6:00 PM",
+          "meta": "Worship Service"
+        },
+        {
+          "day": "Tuesday",
+          "time": "7:00 PM",
+          "meta": "Bible Study"
+        }
+      ]
+    }
+  },
+  "about": {
+    "heroImg": "/images/welcome_img.jpg",
+    "pageHero": {
+      "eyebrow": "This is who we are",
+      "h1": "A purpose-driven people, raising <em>kingdom influencers</em>",
+      "leadParagraph": "Lighthouse Gospel Ministry exists to see a spirit-filled generation rise — people who carry the light of the gospel into every sphere of life."
+    },
+    "body": [
+      {
+        "photo": "",
+        "eyebrow": "Our heart",
+        "title": "Everyone has a place and a purpose here.",
+        "leadParagraph": "We're a warm, growing family who believe the light of the gospel is meant to be carried into homes, workplaces, campuses and communities. Wherever you are on your journey, you belong at the table.",
+        "beliefs": [
+          "Bible-centered",
+          "Spirit-led",
+          "Family",
+          "Mission-minded"
+        ],
+        "steps": [],
+        "cta": {
+          "label": "Plan a Visit",
+          "href": "/plan-a-visit"
+        }
+      },
+      {
+        "photo": "",
+        "eyebrow": "What we believe",
+        "title": "The convictions that shape us",
+        "leadParagraph": "",
+        "beliefs": [],
+        "steps": [
+          {
+            "heading": "The Word of God",
+            "paragraph": "Scripture is our foundation — living, practical and trustworthy for every season of life."
+          },
+          {
+            "heading": "The Spirit at work",
+            "paragraph": "We make room for the Holy Spirit to lead, comfort, empower and transform ordinary people."
+          },
+          {
+            "heading": "A people sent",
+            "paragraph": "We're raised up to carry light outward — into our cities, our nation and the world."
+          }
+        ],
+        "cta": {
+          "label": "",
+          "href": ""
+        }
+      }
+    ]
+  },
+  "events": {
+    "pageHero": {
+      "eyebrow": "What are we doing next?!",
+      "h1": "Upcoming <em>events</em>",
+      "leadParagraph": "Worship nights, first-timer lunches and gatherings for every season of life. There's always a next step at Lighthouse."
+    },
+    "items": [
+      {
+        "mo": "Jun",
+        "dy": "14",
+        "title": "Community Worship Night",
+        "description": "A night where we come together to pray, worship and fellowship with one another.",
+        "meta": [
+          "7: 00 PM",
+          "PEI Campus"
+        ]
+      }
+    ]
+  },
+  "meetingTimes": {
+    "pei": {
+      "meetingTimes": [
+        {
+          "day": "Sunday",
+          "time": "6:00 PM",
+          "meta": "Worship Service",
+          "description": "Worship Service"
+        },
+        {
+          "day": "Tuesday",
+          "time": "7:00 PM",
+          "meta": "Bible Study",
+          "description": "Bible Study"
+        }
+      ]
+    }
+  },
+  "pe": {
+    "meetingTimes": [
+      {
+        "day": "Sunday",
+        "time": "6:00 PM",
+        "meta": "Worship Service",
+        "description": "Worship Service"
+      },
+      {
+        "day": "Tuesday",
+        "time": "7:00 PM",
+        "meta": "Bible Study",
+        "description": "Bible Study"
+      }
+    ],
+    "social": [
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/lighthouse_pei/",
+        "iconClass": "fa fab fa-instagram"
+      },
+      {
+        "name": "facebook",
+        "link": "https://www.facebook.com/lighthousePEI",
+        "iconClass": "fa fab fa-facebook"
+      },
+      {
+        "name": "youtube",
+        "link": "https://www.youtube.com/@lighthousepei",
+        "iconClass": "fa fab fa-youtube"
+      },
+      {
+        "name": "mail",
+        "link": "mailto:mylighthouseministries@gmail.com",
+        "iconClass": "fa fab fa-mailchimp"
+      }
+    ]
+  },
+  "bc": {
+    "meetingTimes": [
+      {
+        "day": "Sunday",
+        "time": "10:00 AM",
+        "meta": "Worship Service",
+        "description": "Worship Service"
+      },
+      {
+        "day": "Tuesday",
+        "time": "7:00 PM",
+        "meta": "Bible Study",
+        "description": "Bible Study"
+      }
+    ],
+    "social": []
+  }
+}
