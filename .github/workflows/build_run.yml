@@ -28,8 +28,14 @@ jobs:
       #     TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
       #     NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }} # Required if using Next.js
 
-      - name: Build Production Website
-        run: npm run build # Your framework's build command (e.g., next build, hugo)
+      - name: Test output
         env:
-          TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          TINA_PUBLIC_CLIENT_ID: ${{ env.TINA_PUBLIC_CLIENT_ID }}
+          TINA_TOKEN: ${{ env.TINA_TOKEN }}
+        run: echo "token = ${{ env.TINA_TOKEN }}"
+
+      - name: Build Production Website
+        env:
+          TINA_PUBLIC_CLIENT_ID: ${{ env.TINA_PUBLIC_CLIENT_ID }}
+          TINA_TOKEN: ${{ env.TINA_TOKEN }}
+        run: TINA_PUBLIC_CLIENT_ID=${{ env.TINA_PUBLIC_CLIENT_ID }} TINA_TOKEN=${{ env.TINA_TOKEN }} npm run build
