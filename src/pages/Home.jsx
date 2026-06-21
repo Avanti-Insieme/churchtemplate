@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
-import Data from '../../data.json';
+import { useSiteData } from '../context/SiteDataProvider'
 
 export default function Home() {
+  const Data = useSiteData()
   const data = Data.home;
+  // const {} = useTina({
+  //   query: 'home',
+  //   variables
+  // })
 
   return (
     <main data-screen-label="Home">

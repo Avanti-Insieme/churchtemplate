@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Data from '../../data.json';
+import { useSiteData } from '../context/SiteDataProvider'
 import { Address, Cta, MeetingTime, PageHero } from '../types';
 
 interface Location {
@@ -20,9 +20,10 @@ interface OnlineMessage {
 }
 
 export default function Locations() {
-  const hero = Data.locations.pageHero as PageHero;
-  const data = Data.locations.locations as Location[];
-  const onlineMsg = Data.locations?.onlineMessage as OnlineMessage | undefined;
+  const siteData = useSiteData()
+  const hero = siteData.locations.pageHero as PageHero;
+  const data = siteData.locations.locations as Location[];
+  const onlineMsg = siteData.locations?.onlineMessage as OnlineMessage | undefined;
 
   return (
     <main data-screen-label="Locations">

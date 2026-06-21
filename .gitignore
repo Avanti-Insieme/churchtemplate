@@ -144,3 +144,6 @@ vite.config.ts.timestamp-*
 
 .DS_Store
 *.local
+
+node_modules
+tina/__generated__

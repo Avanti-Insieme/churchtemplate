@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import Data from '../../data.json';
+import { useSiteData } from '../context/SiteDataProvider'
 import { Section } from '../types';
 
 export default function About() {
-  const data = Data.about;
+  const data = useSiteData().about;
   const body = data.body as Section[];
 
   return (

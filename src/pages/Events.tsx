@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Data from '../../data.json';
+import { useSiteData } from '../context/SiteDataProvider'
 
 const EVENTS = [
   { mo: 'Jun', dy: '14', title: 'Community Worship Night', meta: ['7:00 PM', 'PEI Campus'] },
@@ -10,7 +10,7 @@ const EVENTS = [
 ]
 
 export default function Events() {
-  const data = Data.events;
+  const data = useSiteData().events;
   return (
     <main data-screen-label="Events">
       <section className="pagehero">

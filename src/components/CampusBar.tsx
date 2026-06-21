@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Data from '../../data.json';
+import { useSiteData } from '../context/SiteDataProvider'
 import { MeetingTime } from '../types';
 import { useCampus } from '../context/CampusProvider';
 
@@ -10,17 +10,19 @@ const CAMPUSES = [
 ]
 
 export default function CampusBar() {
+  const siteData = useSiteData()
   const { campus, setCampus } = useCampus();
   const [active, setActive] = useState('pe')
   const [meetingTime, setMeetTime] = useState<MeetingTime | undefined>(undefined)
 
   useEffect(() => {
-    if (Data[active]) {
+    const campusData = siteData[active as keyof typeof siteData] as any;
+    if (campusData) {
       setActive(campus)
-      const time = Data[active]?.meetingTimes?.find((meet: MeetingTime) => meet.day == "Sunday");
+      const time = campusData?.meetingTimes?.find((meet: MeetingTime) => meet.day == "Sunday");
       setMeetTime(time)
     }
-  }, [active, campus])
+  }, [active, campus, siteData])
 
   const handleCampusChange = (campus: string) => {
     setActive(campus)

@@ -4,17 +4,19 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"vite\"",
+    "build": "tinacms build && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "tinacms": "^3.9.3"
   },
   "devDependencies": {
-    "@types/node": "^25.9.2",
+    "@tinacms/cli": "^2.5.1",
+    "@types/node": "^25.9.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.3.1",

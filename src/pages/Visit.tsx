@@ -1,25 +1,17 @@
 import { Link } from 'react-router-dom'
 import { MeetingTime } from '../types'
-import Data from '../../data.json';
+import { useSiteData } from '../context/SiteDataProvider'
 import { useEffect, useState } from 'react';
 
 export default function Visit() {
+  const siteData = useSiteData()
   const [meetingTimes, setMeetingTimes] = useState<MeetingTime[] | undefined>(undefined)
-  const data = Data.visit;
-  const times = Data.meetingTimes as any[];
+  const data = siteData.visit;
 
   useEffect(() => {
-    const v = times
-      .map(data => data)
-      .filter((meetData: { [key: string]: any }[]) => {
-        const key = Object.keys(meetData)[0];
-        return key == "pei";
-      })[0] as { [key: string]: any };
-
-    if (v) {
-      setMeetingTimes(v.pei.meetingTimes);
-    }
-  }, [times])
+    const times = siteData.meetingTimes?.pei?.meetingTimes as MeetingTime[] | undefined;
+    if (times) setMeetingTimes(times);
+  }, [siteData])
 
   return (
     <main data-screen-label="Plan a Visit">
