@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main # Change this to your default branch name
+env:
+  TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
+  TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+  TEST: sometext
 
 jobs:
   build-and-deploy:
@@ -29,13 +33,7 @@ jobs:
       #     NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }} # Required if using Next.js
 
       - name: Test output
-        env:
-          TINA_PUBLIC_CLIENT_ID: ${{ env.TINA_PUBLIC_CLIENT_ID }}
-          TINA_TOKEN: ${{ env.TINA_TOKEN }}
-        run: echo "token = $TINA_TOKEN"
+        run: echo "Test = $TEST; token = $TINA_TOKEN"
 
       - name: Build Production Website
-        env:
-          TINA_PUBLIC_CLIENT_ID: ${{ env.TINA_PUBLIC_CLIENT_ID }}
-          TINA_TOKEN: ${{ env.TINA_TOKEN }}
         run: TINA_PUBLIC_CLIENT_ID=$TINA_PUBLIC_CLIENT_ID TINA_TOKEN=$TINA_TOKEN npm run build
