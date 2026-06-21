@@ -10,7 +10,7 @@ env:
   TEST: sometext
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,6 +43,7 @@ jobs:
         with:
           name: production-files
           path: ./dist
+
   deploy:
     name: Deploy
     needs: build
