@@ -32,10 +32,10 @@ jobs:
         env:
           TINA_PUBLIC_CLIENT_ID: ${{ env.TINA_PUBLIC_CLIENT_ID }}
           TINA_TOKEN: ${{ env.TINA_TOKEN }}
-        run: echo "token = ${{ env.TINA_TOKEN }}"
+        run: echo "token = $TINA_TOKEN"
 
       - name: Build Production Website
         env:
           TINA_PUBLIC_CLIENT_ID: ${{ env.TINA_PUBLIC_CLIENT_ID }}
           TINA_TOKEN: ${{ env.TINA_TOKEN }}
-        run: TINA_PUBLIC_CLIENT_ID=${{ env.TINA_PUBLIC_CLIENT_ID }} TINA_TOKEN=${{ env.TINA_TOKEN }} npm run build
+        run: TINA_PUBLIC_CLIENT_ID=$TINA_PUBLIC_CLIENT_ID TINA_TOKEN=$TINA_TOKEN npm run build
