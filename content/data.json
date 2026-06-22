@@ -185,6 +185,15 @@
           "7: 00 PM",
           "PEI Campus"
         ]
+      },
+      {
+        "mo": "Jun",
+        "dy": "29",
+        "title": "Miracle Service",
+        "description": "A service of power, miracles and blessings",
+        "meta": [
+          "220 Richmond St. 6:00 PM"
+        ]
       }
     ]
   },
