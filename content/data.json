@@ -178,22 +178,22 @@
     "items": [
       {
         "mo": "Jun",
-        "dy": "14",
-        "title": "Community Worship Night",
-        "description": "A night where we come together to pray, worship and fellowship with one another.",
-        "meta": [
-          "7: 00 PM",
-          "PEI Campus"
-        ]
-      },
-      {
-        "mo": "Jun",
         "dy": "29",
         "title": "Miracle Service",
         "description": "A service of power, miracles and blessings",
         "meta": [
           "6:00 PM",
           "PE Campus"
+        ]
+      },
+      {
+        "mo": "Jul",
+        "dy": "3",
+        "title": "Breaking the Cycle of Trauma in Relationships",
+        "description": "Let us gather and gain an understanding of relational trauma, learn to heal from emotional wounds and build healthy and lasting relationships. Stay tune for the link",
+        "meta": [
+          "7:00 PM",
+          "Online Zoom"
         ]
       }
     ]
