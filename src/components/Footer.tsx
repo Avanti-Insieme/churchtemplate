@@ -36,7 +36,7 @@ export default function Footer() {
             {links?.length &&
               <div className="social">
                 {links.map((link, i) => (
-                  <a key={`${i}_${link.name}`} href={link.name} aria-label="Facebook">
+                  <a key={`${i}_${link.name}`} href={link.link} aria-label="Facebook">
                     <i className={link.iconClass}></i>
                   </a>
                 ))}
